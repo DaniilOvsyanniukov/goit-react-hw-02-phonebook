@@ -1,0 +1,25 @@
+import PropTypes from "prop-types";
+import s from "./Contacts.module.css";
+
+const Contact = ({ contact, deleteContact }) => {
+  return (
+    <li className={s.item}>
+      <p>
+        {contact.name}: {contact.number}
+      </p>
+      <button
+        type="button"
+        className={s.button}
+        id={contact.id}
+        onClick={deleteContact}
+      >
+        Delete
+      </button>
+    </li>
+  );
+};
+export default Contact;
+
+Contact.propTypes = {
+  contact: PropTypes.object,
+};
