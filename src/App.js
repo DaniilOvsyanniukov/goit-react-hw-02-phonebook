@@ -47,11 +47,10 @@ class App extends Component {
   };
   deleteContact = (e) => {
     const { id } = e.currentTarget;
-    const obj = this.state.contacts.find((contact) => contact.id === id);
-    const deleteIndex = this.state.contacts.indexOf(obj);
-    let newContacts = this.state.contacts;
-    newContacts.splice(deleteIndex, 1);
-    this.setState({ contacts: newContacts });
+    const visiblecontact = this.state.contacts.filter(
+      (contacts) => !contacts.id.includes(id)
+    );
+    this.setState({ contacts: visiblecontact });
   };
 
   render() {
