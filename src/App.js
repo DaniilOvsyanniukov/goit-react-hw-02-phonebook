@@ -45,8 +45,7 @@ class App extends Component {
       }));
     }
   };
-  deleteContact = (e) => {
-    const { id } = e.currentTarget;
+  deleteContact = (id) => {
     const visiblecontact = this.state.contacts.filter(
       (contacts) => !contacts.id.includes(id)
     );

@@ -11,7 +11,7 @@ const Contact = ({ contact, deleteContact }) => {
         type="button"
         className={s.button}
         id={contact.id}
-        onClick={deleteContact}
+        onClick={() => deleteContact(contact.id)}
       >
         Delete
       </button>
@@ -22,4 +22,5 @@ export default Contact;
 
 Contact.propTypes = {
   contact: PropTypes.object,
+  deleteContact: PropTypes.func,
 };
